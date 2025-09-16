@@ -1,0 +1,36 @@
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.iws
+
+# Build outputs
+target/
+build/
+dist/
+out/
+.next/
+
+# Dependency directories
+node_modules/
+
+# Log files
+*.log
+
+# Local environment variables - VERY IMPORTANT
+.env
+*.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Flutter specific
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+app_frontend/ios/Pods/
+app_frontend/ios/Flutter/App.framework
+app_frontend/ios/Flutter/engine
+app_frontend/ios/.symlinks/
+app_frontend/build/

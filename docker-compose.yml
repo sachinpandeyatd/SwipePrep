@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: swipeprep-db
+    ports:
+      - "5432:5432" # Expose Postgres port to your host machine
+    environment:
+      POSTGRES_DB: swipeprep
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - swipeprep_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: swipeprep-cache
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+volumes:
+  swipeprep_data:

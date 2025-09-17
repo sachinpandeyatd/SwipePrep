@@ -24,28 +24,30 @@ public class Question {
 	@JoinColumn(name = "sub_topic_id", nullable = false)
 	private SubTopic subTopic;
 
-	@Column(nullable = false, columnDefinition = "TEXT")
+	@Column(nullable = false, columnDefinition = "TEXT", length = 1000)
 	private String questionText;
 
-	@Column(nullable = false, columnDefinition = "TEXT")
+	@Column(nullable = false, columnDefinition = "TEXT", length = 1000)
 	private String shortAnswer;
 
-	@Column(nullable = false)
+	@Column(nullable = false, length = 2000)
 	private String detailedAnswer;
 
 	@Type(JsonType.class)
 	@Column(columnDefinition = "jsonb")
 	private String codeSnippets;
 
+
+	@Column(nullable = false, length = 255)
 	@Enumerated(EnumType.STRING)
-	@Column(nullable = false, columnDefinition = "question_difficulty")
 	private QuestionDifficulty difficulty;
 
+
+	@Column(nullable = false, length = 255)
 	@Enumerated(EnumType.STRING)
-	@Column(nullable = false, columnDefinition = "question_status")
 	private QuestionStatus status = QuestionStatus.draft;
 
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+	@ManyToMany(cascade = {CascadeType.MERGE})
 	@JoinTable(
 			name = "question_tags",
 			joinColumns = @JoinColumn(name = "question_id"),

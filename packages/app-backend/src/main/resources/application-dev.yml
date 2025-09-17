@@ -7,3 +7,10 @@ spring:
 logging:
   level:
     com.swipeprep: DEBUG
+
+application:
+  security:
+    jwt:
+      secret-key: ${JWT_SECRET_KEY}
+      # Token validity in milliseconds (24 hours)
+      expiration: 86400000

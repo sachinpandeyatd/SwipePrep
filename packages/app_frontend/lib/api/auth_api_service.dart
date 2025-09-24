@@ -31,6 +31,7 @@ class AuthApiService {
       );
       return AuthenticationResponse.fromJson(response.data);
     } on DioException catch (e) {
+
       throw ApiException(e.response?.data['message'] ?? 'Invalid credentials');
     }
   }

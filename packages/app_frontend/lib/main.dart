@@ -1,3 +1,4 @@
+import 'package:app_frontend/auth/auth_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -22,11 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: const Color(0xFF121212),
       ),
-      home: const Scaffold(
-        body: Center(
-          child: Text('Welcome to SwipePrep'),
-        )
-      )
+      home: const AuthWrapper(),
     );
   }
 }

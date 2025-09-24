@@ -21,3 +21,7 @@ application:
       secret-key: ${JWT_SECRET_KEY}
       # Token validity in milliseconds (24 hours)
       expiration: 8640000000
+
+server:
+  address: 0.0.0.0
+  port: 8080

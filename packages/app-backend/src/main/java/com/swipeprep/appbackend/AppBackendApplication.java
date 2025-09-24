@@ -32,7 +32,7 @@ public class AppBackendApplication {
 	@Profile("dev")
 	CommandLineRunner databaseSeeder(){
 		return args -> {
-			if (topicRepository.count() > 0){
+			if (topicRepository.count() > 20){
 				System.out.println("Database already seeded.Skipping.");
 				return;
 			}
